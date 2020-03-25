@@ -1,0 +1,19 @@
+boby{
+  background-color: #eee !important;
+  color:#546421 !important;
+}
+.nose{
+  background-color: #eee !important;
+  color:#546421 !important;
+}
+.jumbotron{
+  padding: 40px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 3px #eee;
+}
+.btn-success, .btn-warning{
+  margin-left: 2%;
+}
+.navbar-nav .active{
+  border-bottom: 3px solid orange;
+}

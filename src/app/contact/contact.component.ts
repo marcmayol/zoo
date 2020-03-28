@@ -1,11 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, DoCheck} from '@angular/core';
 
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.css']
 })
-export class ContactComponent implements OnInit {
+export class ContactComponent implements OnInit, DoCheck {
   title = 'Contacto';
   emailContacto: string;
 
@@ -14,6 +14,10 @@ export class ContactComponent implements OnInit {
 
   ngOnInit(): void {
     console.log('contact.component cargado !!');
+  }
+
+  ngDoCheck(): void {
+    this.emailContacto = localStorage.getItem('emailContacto');
   }
 
   guardarEmail() {

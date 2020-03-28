@@ -1,4 +1,7 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, Output} from '@angular/core';
+
+declare var jQuery: any;
+declare var $: any;
 
 @Component({
   selector: 'app-tienda',
@@ -9,12 +12,19 @@ export class TiendaComponent implements OnInit {
   public titulo;
   public nombreParque: string;
   public miParque;
+  public texto: any;
 
   constructor() {
     this.titulo = 'mi tienda';
   }
 
   ngOnInit(): void {
+    $('#textojq').hide();
+    $('#botonjq').click(function() {
+      console.log('click desde jquery');
+      $('#textojq').show();
+    });
+    $('#caja').dotdotdot({});
   }
 
   mostrarNombre() {
@@ -24,6 +34,10 @@ export class TiendaComponent implements OnInit {
   verDatosPadre(event) {
     console.log(event);
     this.miParque = event;
+  }
+
+  textoRichEditor() {
+    console.log(this.texto);
   }
 
 }

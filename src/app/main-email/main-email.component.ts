@@ -5,20 +5,11 @@ import {Component, OnInit} from '@angular/core';
   templateUrl: './main-email.component.html',
   styleUrls: ['./main-email.component.css']
 })
-export class MainEmailComponent implements OnInit {
-  title = 'Mostrar email';
+export class MainEmailComponent {
+  title = 'Modulo de  emails';
   emailContacto: string;
 
   constructor() {
-  }
-
-  ngOnInit(): void {
-    console.log('contact.component cargado !!');
-  }
-
-  guardarEmail() {
-    localStorage.setItem('emailContacto', this.emailContacto);
-    console.log(localStorage.getItem('emailContacto'));
   }
 
 }

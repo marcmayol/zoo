@@ -3,6 +3,7 @@ import {NgModule} from '@angular/core';
 import {FormsModule} from '@angular/forms';
 import {ReactiveFormsModule} from '@angular/forms';
 import {AppRoutingModule} from './app-routing.module';
+import {ModuloemailModule} from './moduloemail/moduloemail.module' ;
 import {AppComponent} from './app.component';
 import {TiendaComponent} from './tienda/tienda.component';
 import {ParquesComponent} from './parques/parques.component';
@@ -27,7 +28,8 @@ import { EditorModule, TINYMCE_SCRIPT_SRC } from '@tinymce/tinymce-angular';
     EditorModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    ModuloemailModule
   ],
   providers: [
     {provide: TINYMCE_SCRIPT_SRC, useValue: 'tinymce/tinymce.min.js'}

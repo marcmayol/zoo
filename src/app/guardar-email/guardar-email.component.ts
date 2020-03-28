@@ -5,25 +5,16 @@ import {Component, DoCheck, OnInit} from '@angular/core';
   templateUrl: './guardar-email.component.html',
   styleUrls: ['./guardar-email.component.css']
 })
-export class GuardarEmailComponent implements OnInit, DoCheck {
+export class GuardarEmailComponent {
   title = 'Guardar email';
   emailContacto: string;
 
   constructor() {
   }
 
-  ngOnInit(): void {
-    this.emailContacto = localStorage.getItem('emailContacto');
+  guardarEmail() {
+    localStorage.setItem('emailContacto', this.emailContacto);
+    console.log(localStorage.getItem('emailContacto'));
   }
 
-  ngDoCheck(): void {
-
-    this.emailContacto = localStorage.getItem('emailContacto');
-  }
-
-  borrarEmail() {
-    localStorage.removeItem('emailContacto');
-    localStorage.clear();
-    this.emailContacto = null;
-  }
 }

@@ -1,0 +1,32 @@
+<div class="col-lg-12">
+  <h3>{{title}}</h3>
+  <table class="table">
+    <thead>
+    <tr>
+      <th scope="col">Nombre</th>
+      <th scope="col">Año</th>
+      <th scope="col">Acciones</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let n of numbers; let i = index;">
+      <td>oso Panda {{i + 1}}</td>
+      <td>2011</td>
+      <td>
+        <button class="btn btn-success" role="button">
+          <i class="fa fa-eye" aria-hidden="true"></i>
+          ver
+        </button>
+        <button class="btn btn-primary" role="button">
+          <i class="fa fa-pencil" aria-hidden="true"></i>
+          Editar
+        </button>
+        <button class="btn btn-danger" role="button">
+          <i class="fa fa-trash" aria-hidden="true"></i>
+          Borrar
+        </button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>

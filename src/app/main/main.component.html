@@ -1,1 +1,21 @@
-<p>main works!</p>
+<div class=row>
+  <div class="col-lg-4">
+    <h3>{{title}}</h3>
+    <div class="sidebar-admin" data-example-id="sample-nav-stacked">
+      <ul class="nav flex-column">
+        <li class="nav-item" role="presentation" [routerLinkActive]="['active']">
+          <a class="nav-link" [routerLink]="['listado']" >Listado</a>
+        </li>
+        <li class="nav-item" role="presentation" [routerLinkActive]="['active']">
+          <a class="nav-link" [routerLink]="['crear']">Crear</a>
+        </li>
+        <li class="nav-item" role="presentation" [routerLinkActive]="['active']">
+          <a class="nav-link " [routerLink]="['listado']">Inforamación</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="col-lg-8">
+    <router-outlet></router-outlet>
+  </div>
+</div>

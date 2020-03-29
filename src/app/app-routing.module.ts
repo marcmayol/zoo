@@ -14,7 +14,6 @@ const routes: Routes = [
   {path: 'contacto', component: ContactComponent},
   {path: 'cuidadores', component: KeepersComponent},
   {path: 'tienda', component: TiendaComponent},
-  {path: '**', component: HomeComponent}
 ];
 
 @NgModule({

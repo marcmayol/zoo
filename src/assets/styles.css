@@ -17,6 +17,10 @@ boby{
 .navbar-nav .active{
   border-bottom: 3px solid orange;
 }
+#navbarNav .navbar-nav .nav-item:hover {
+  transition: 300ms all;
+  border-bottom: 3px solid orange;
+}
 .hidden{
   display: none;
 }

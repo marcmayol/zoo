@@ -1,0 +1,69 @@
+.boton-transiciones {
+  padding: 10px;
+  background-color: red;
+  color: white;
+  border-radius: 20px;
+  border: 4px solid blue;
+  transition: border 2s, border-radius 500ms, background-color 5s;
+  width: 120px;
+  display: block;
+}
+
+.boton-transiciones:hover {
+  text-decoration: none !important;
+  background-color: #ccc;
+  color: white !important;
+  cursor: pointer;
+  border-radius: 2px;
+  border: 1px solid red;
+}
+
+.caja_animada {
+  margin-top: 15px;
+  background-color: green;
+  border: 5px solid black;
+  width: 200px;
+  height: 200px;
+  /*animation-name: deslizamiento;*/
+  /*animation-duration: 10s;*/
+  /*animation-iteration-count: infinite;*/
+}
+
+@keyframes rota {
+  0% {
+    transform: rotate(0deg);
+    margin-left: 0px;
+  }
+  50% {
+    transform: rotate(360deg);
+    margin-left: 600px;
+  }
+  100% {
+    transform: rotate(0deg);
+    margin-left: 0px;
+  }
+
+}
+
+@keyframes deslizamiento {
+  0% {
+    margin-left: 0px;
+  }
+  25% {
+    margin-left: 400px;
+    background-color: red;
+
+  }
+  50% {
+    border-radius: 1000px;
+  }
+  75% {
+    margin-left: 0px;
+    background-color: yellow;
+    border-radius: 0px;
+  }
+  100% {
+    background-color: green;
+  }
+
+}

@@ -5,6 +5,7 @@ import {ReactiveFormsModule} from '@angular/forms';
 import {AppRoutingModule} from './app-routing.module';
 import {ModuloemailModule} from './moduloemail/moduloemail.module' ;
 import {AdminModule} from './admin/admin.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {AppComponent} from './app.component';
 import {TiendaComponent} from './tienda/tienda.component';
 import {ParquesComponent} from './parques/parques.component';
@@ -26,6 +27,7 @@ import {EditorModule, TINYMCE_SCRIPT_SRC} from '@tinymce/tinymce-angular';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     EditorModule,
     AppRoutingModule,
     FormsModule,

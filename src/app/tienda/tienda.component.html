@@ -1,34 +1,35 @@
-<br/>
-<a href="javascript:void(0)" class="boton-activo btn btn-success" [@marcar]="status" (click)="cambiarEstado(status)">
-  <span *ngIf="status=='inactive'">Botón inactivo</span>
-  <span *ngIf="status=='active'">Botón activado</span>
-</a>
-<hr/>
-<h3>animaciones con css3</h3>
-<br/>
-<a href="#" class="boton-transiciones">Transiciones</a>
-<div class="clearfix"></div>
-<div class="caja_animada">
+<div class="col-12" [@fadeIn]>
+  <br/>
+  <a href="javascript:void(0)" class="boton-activo btn btn-success" [@marcar]="status" (click)="cambiarEstado(status)">
+    <span *ngIf="status=='inactive'">Botón inactivo</span>
+    <span *ngIf="status=='active'">Botón activado</span>
+  </a>
+  <hr/>
+  <h3>animaciones con css3</h3>
+  <br/>
+  <a href="#" class="boton-transiciones">Transiciones</a>
+  <div class="clearfix"></div>
+  <div class="caja_animada">
 
-</div>
-<br/>
-<br/>
-<h4>Utilizar jquery dentro de angular</h4>
-<button id="botonjq">Mostrar textos</button>
-<p id="textojq" class="hidden">
-  This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or
-  information.
-</p>
-<br/>
-<div id="caja" style="border:1px solid black; width: 50px; height:50px">
-  This is a simple hero unit, a simple div for calling extra attention to featured content or
-  information.
-</div>
-<h1>TinyMCE 5 Angular Demo</h1>
-<editor apiKey="sx3s14ktkjumg89frwlwfahfzyl61zydbr5ltc6nvdttlyrs"
-        [(ngModel)]="texto"
-        (onKeyUp)="textoRichEditor()"
-        [init]="{
+  </div>
+  <br/>
+  <br/>
+  <h4>Utilizar jquery dentro de angular</h4>
+  <button id="botonjq">Mostrar textos</button>
+  <p id="textojq" class="hidden">
+    This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or
+    information.
+  </p>
+  <br/>
+  <div id="caja" style="border:1px solid black; width: 50px; height:50px">
+    This is a simple hero unit, a simple div for calling extra attention to featured content or
+    information.
+  </div>
+  <h1>TinyMCE 5 Angular Demo</h1>
+  <editor apiKey="sx3s14ktkjumg89frwlwfahfzyl61zydbr5ltc6nvdttlyrs"
+          [(ngModel)]="texto"
+          (onKeyUp)="textoRichEditor()"
+          [init]="{
         base_url: '/tinymce',
     suffix: '.min' ,
      height: 500,
@@ -44,28 +45,29 @@
        bullist numlist outdent indent | removeformat | help'
    }"></editor>
 
-<hr/>
-Padre:
-<p>{{titulo}}</p>
+  <hr/>
+  Padre:
+  <p>{{titulo}}</p>
 
-<hr/>
-Nombre del parque:
-<p>
-  <input type="text" [(ngModel)]="nombreParque" (keyup)="mostrarNombre()"/>
-  <br/>
-  Resultado: {{nombreParque}}
-</p>
-<div>
-  <h4>Datos de miParque desdeel hijo</h4>
-  <ol *ngIf="miParque">
-    <li>{{miParque.nombre}}</li>
-    <li>{{miParque.metros}}</li>
-    <li>{{miParque.vegetacion}}</li>
-    <li>{{miParque.abierto}}</li>
-  </ol>
+  <hr/>
+  Nombre del parque:
+  <p>
+    <input type="text" [(ngModel)]="nombreParque" (keyup)="mostrarNombre()"/>
+    <br/>
+    Resultado: {{nombreParque}}
+  </p>
+  <div>
+    <h4>Datos de miParque desdeel hijo</h4>
+    <ol *ngIf="miParque">
+      <li>{{miParque.nombre}}</li>
+      <li>{{miParque.metros}}</li>
+      <li>{{miParque.vegetacion}}</li>
+      <li>{{miParque.abierto}}</li>
+    </ol>
+  </div>
+  <p *ngIf="nombreParque">
+    <app-parques [nombre]="'nombre por defecto'" (pasameLosDatos)="verDatosPadre($event)"></app-parques>
+  </p>
+  hijo:
+  <hr/>
 </div>
-<p *ngIf="nombreParque">
-  <app-parques [nombre]="'nombre por defecto'" (pasameLosDatos)="verDatosPadre($event)"></app-parques>
-</p>
-hijo:
-<hr/>

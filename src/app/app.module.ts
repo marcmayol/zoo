@@ -14,6 +14,8 @@ import {ContactComponent} from './contact/contact.component';
 import {KeepersComponent} from './keepers/keepers.component';
 import {HomeComponent} from './home/home.component';
 import {EditorModule, TINYMCE_SCRIPT_SRC} from '@tinymce/tinymce-angular';
+import { LoginComponent } from './login/login.component';
+import { RegistroComponent } from './registro/registro.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import {EditorModule, TINYMCE_SCRIPT_SRC} from '@tinymce/tinymce-angular';
     AnimalsComponent,
     ContactComponent,
     KeepersComponent,
-    HomeComponent
+    HomeComponent,
+    LoginComponent,
+    RegistroComponent
   ],
   imports: [
     BrowserModule,

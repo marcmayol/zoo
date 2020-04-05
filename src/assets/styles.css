@@ -1,26 +1,36 @@
-boby{
+boby {
   background-color: #eee !important;
-  color:#546421 !important;
+  color: #546421 !important;
 }
-.nose{
+
+.nose {
   background-color: #eee !important;
-  color:#546421 !important;
+  color: #546421 !important;
 }
-.jumbotron{
+
+.jumbotron {
   padding: 40px;
   border-radius: 5px;
   box-shadow: 0px 0px 3px #eee;
 }
-.btn-success, .btn-warning{
+
+.btn-success, .btn-warning {
   margin-left: 2%;
 }
-.navbar-nav .active{
+
+.navbar-nav .active {
   border-bottom: 3px solid orange;
 }
+
+#navbarNav .navbar-nav .nav-item {
+  border-bottom: 3px solid transparent;
+}
+
 #navbarNav .navbar-nav .nav-item:hover {
   transition: 300ms all;
   border-bottom: 3px solid orange;
 }
-.hidden{
+
+.hidden {
   display: none;
 }

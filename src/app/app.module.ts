@@ -5,7 +5,8 @@ import {ReactiveFormsModule} from '@angular/forms';
 import {AppRoutingModule} from './app-routing.module';
 import {ModuloemailModule} from './moduloemail/moduloemail.module' ;
 import {AdminModule} from './admin/admin.module';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {HttpClientModule} from '@angular/common/http';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {AppComponent} from './app.component';
 import {TiendaComponent} from './tienda/tienda.component';
 import {ParquesComponent} from './parques/parques.component';
@@ -14,8 +15,8 @@ import {ContactComponent} from './contact/contact.component';
 import {KeepersComponent} from './keepers/keepers.component';
 import {HomeComponent} from './home/home.component';
 import {EditorModule, TINYMCE_SCRIPT_SRC} from '@tinymce/tinymce-angular';
-import { LoginComponent } from './login/login.component';
-import { RegistroComponent } from './registro/registro.component';
+import {LoginComponent} from './login/login.component';
+import {RegistroComponent} from './registro/registro.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { RegistroComponent } from './registro/registro.component';
     FormsModule,
     ReactiveFormsModule,
     ModuloemailModule,
-    AdminModule
+    AdminModule,
+    HttpClientModule
   ],
   providers: [
     {provide: TINYMCE_SCRIPT_SRC, useValue: 'tinymce/tinymce.min.js'}

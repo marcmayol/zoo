@@ -17,6 +17,7 @@ import {HomeComponent} from './home/home.component';
 import {EditorModule, TINYMCE_SCRIPT_SRC} from '@tinymce/tinymce-angular';
 import {LoginComponent} from './login/login.component';
 import {RegistroComponent} from './registro/registro.component';
+import {UserService} from './services/user.service';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import {RegistroComponent} from './registro/registro.component';
     HttpClientModule
   ],
   providers: [
-    {provide: TINYMCE_SCRIPT_SRC, useValue: 'tinymce/tinymce.min.js'}
+    {provide: TINYMCE_SCRIPT_SRC, useValue: 'tinymce/tinymce.min.js'},
+    UserService
   ],
   bootstrap: [AppComponent]
 })

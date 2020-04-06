@@ -1,6 +1,11 @@
 <div class="col-lg-6">
   <h2>{{title}}</h2>
-
+  <div class="alert alert-danger" *ngIf="!status && message">
+    {{message}}
+  </div>
+  <div class="alert alert-success" *ngIf="status && message">
+    {{message}}
+  </div>
   <form [formGroup]="registerForm" (ngSubmit)="onSubmit(registerForm.value)">
     <div class="form-group">
       <label for="name">Nombre:</label>

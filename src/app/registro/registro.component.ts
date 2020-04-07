@@ -2,7 +2,6 @@ import {Component, OnInit} from '@angular/core';
 import {Router, ActivatedRoute, Params} from '@angular/router';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {User} from '../models/user.model';
-// import {GLOBAL} from '../services/globals';
 import {UserService} from '../services/user.service';
 
 @Component({
@@ -62,7 +61,7 @@ export class RegistroComponent implements OnInit {
       response => {
         if (response.user._id) {
           this.user = response.user;
-          this.message = 'El rgistro se ha realizado correctamente, identificate con el email ' + this.user.email;
+          this.message = 'El registro se ha realizado correctamente, identificate con el email ' + this.user.email;
           this.status = true;
           this.registerForm.reset();
         } else {

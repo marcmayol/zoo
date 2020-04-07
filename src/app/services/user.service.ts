@@ -29,4 +29,17 @@ export class UserService {
     return this._http.post<any>(this.url + '\/register', params, requestOptions).pipe(map(res => res));
 
   }
+
+  signup(userToLogin, gettoken = null) {
+    if (gettoken != null) {
+      userToLogin.gettoken = gettoken;
+    }
+    let params = JSON.stringify(userToLogin);
+    let headers = {'Content-Type': 'application/json'};
+    let requestOptions = {
+      headers: new HttpHeaders(headers),
+    };
+    return this._http.post<any>(this.url + '\/login', params, requestOptions).pipe(map(res => res));
+
+  }
 }

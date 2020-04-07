@@ -38,7 +38,11 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    if (this.userService.getidentiy() != null) {
+      this._router.navigate(['/']);
+    }
   }
+
 
   onSubmit() {
     this.user = new User('', '', '', this.loginForm.value.email, this.loginForm.value.password, 'ROLE_USER', '');
@@ -46,14 +50,15 @@ export class LoginComponent implements OnInit {
       response => {
         if (!response.user || response.user._id) {
           this.token = response.token;
-          console.log('El login se ha realizado correctamente');
-          console.log(this.token);
-          this.message = 'l login se ha realizado correctamente';
+          this.user = response.user;
+          this.message = 'El login se ha realizado correctamente';
           this.status = true;
+          localStorage.setItem('token', this.token);
+          localStorage.setItem('identity', JSON.stringify(this.user));
+          this._router.navigate(['/']);
         } else {
           this.message = 'error al logarse';
           this.status = false;
-          console.log('el usuario no se ha logueado correctamente');
         }
       },
       error => {

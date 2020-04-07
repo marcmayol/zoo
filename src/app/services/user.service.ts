@@ -10,6 +10,8 @@ import {GLOBAL} from './globals';
 })
 export class UserService {
   public url: string;
+  public token: string;
+  public identity;
 
   constructor(
     // tslint:disable-next-line:variable-name
@@ -41,5 +43,26 @@ export class UserService {
     };
     return this._http.post<any>(this.url + '\/login', params, requestOptions).pipe(map(res => res));
 
+  }
+
+  getidentiy() {
+    let identity = JSON.parse(localStorage.getItem('identity'));
+    if (identity != undefined) {
+      this.identity = identity;
+    } else {
+      this.identity = null;
+    }
+    return this.identity;
+  }
+
+  getToken() {
+    let token = localStorage.getItem('token');
+    // tslint:disable-next-line:triple-equals
+    if (token != undefined) {
+      this.token = token;
+    } else {
+      this.token = null;
+    }
+    return this.token;
   }
 }

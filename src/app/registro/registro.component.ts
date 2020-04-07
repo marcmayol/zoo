@@ -45,7 +45,9 @@ export class RegistroComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    console.log();
+    if (this._userService.getidentiy() != null) {
+      this._router.navigate(['/']);
+    }
   }
 
   onSubmit(value) {

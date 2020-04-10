@@ -50,14 +50,20 @@
       </ul>
       <ul class="nav navbar-nav ml-auto" *ngIf="token">
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" id="user_nav" role="button" data-toggle="dropdown" aria-haspopup="true"
+          <a class="nav-link dropdown-toggle" href="javascript::void(0)" id="user_nav" role="button"
+             data-toggle="dropdown" aria-haspopup="true"
              aria-expanded="false">
+            <img src="{{url+'/get-image-file/'+identity.image}}" alt="user image" class="rounded" width="30px"
+                 height="30px">
             {{identity.name}}
           </a>
           <div class="dropdown-menu" aria-labelledby="user-nav">
             <a class="dropdown-item" [routerLink]="['/mis-datos']" [routerLinkActive]="['active']"> Mis datos</a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="javascript:void(0)"  (click)="logout()">Salir</a>
+            <a class="dropdown-item" href="javascript:void(0)" [routerLink]="['/admin-panel']"
+               [routerLinkActive]="['active']" *ngIf="identity.role =='ROLE_ADMIN'">Administración</a>
+            <div *ngIf="identity.role =='ROLE_ADMIN'" class="dropdown-divider"></div>
+            <a class="dropdown-item" href="javascript:void(0)" (click)="logout()">Salir</a>
           </div>
         </li>
       </ul>

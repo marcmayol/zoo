@@ -4,10 +4,12 @@ import {MainComponent} from '../main/main.component';
 import {ListComponent} from '../list/list.component';
 import {AddComponent} from '../add/add.component';
 import {EditComponent} from '../edit/edit.component';
+import {AdminGuard} from '../guards/admin.guard';
 
 const adminRoutes: Routes = [
   {
-    path: 'admin-panel',  component: MainComponent,
+    canActivate: [AdminGuard ],
+    path: 'admin-panel', component: MainComponent,
     children: [
       {path: '', component: ListComponent},
       {path: 'listado', component: ListComponent},

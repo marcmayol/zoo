@@ -7,6 +7,8 @@ import {MainComponent} from '../main/main.component';
 import {ListComponent} from '../list/list.component';
 import {AddComponent} from '../add/add.component';
 import {EditComponent} from '../edit/edit.component';
+import {UserService} from '../services/user.service';
+import {AdminGuard} from '../guards/admin.guard';
 
 
 @NgModule({
@@ -18,7 +20,10 @@ import {EditComponent} from '../edit/edit.component';
     AdminRoutingModule
   ],
   exports: [MainComponent, ListComponent, AddComponent, EditComponent],
-  providers: []
+  providers: [
+    UserService,
+    AdminGuard
+  ]
 })
 export class AdminModule {
 }

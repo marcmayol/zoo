@@ -48,7 +48,7 @@ export class UserEditComponent implements OnInit {
       password: new FormControl(this.user.password, [
         Validators.required
       ]),
-      avatar: new FormControl(this.user.image)
+      avatar: new FormControl()
     });
   }
 
@@ -70,13 +70,15 @@ export class UserEditComponent implements OnInit {
           this.status = true;
           this.message = 'usuario actualizado';
           //subida de la imagen
-          this.uploadService.makeFileRequest(this.url + '/upload-image-user/' + this.user._id, [], this.filesToUpload, this.token, 'file')
-            .then((result: any) => {
-              this.user.image = result.image;
-              localStorage.setItem('identity', JSON.stringify(this.user));
-              console.log(this.user);
-            });
+          if (this.userEditForm.value.image !=null) {
+            this.uploadService.makeFileRequest(this.url + '/upload-image-user/' + this.user._id, [], this.filesToUpload, this.token, 'file')
+              .then((result: any) => {
+                this.user.image = result.image;
+                localStorage.setItem('identity', JSON.stringify(this.user));
+                console.log(this.user);
+              });
 
+          }
         }
 
       },

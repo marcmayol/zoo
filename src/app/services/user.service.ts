@@ -2,7 +2,6 @@ import {Injectable} from '@angular/core';
 import {HttpClient, HttpResponse, HttpHeaders} from '@angular/common/http';
 import {map} from 'rxjs/operators';
 import {Observable} from 'rxjs';
-import {} from '@angular/common/http';
 import {GLOBAL} from './globals';
 
 @Injectable({
@@ -64,5 +63,18 @@ export class UserService {
       this.token = null;
     }
     return this.token;
+  }
+
+  userUpdate(userToUpdate) {
+    let params = JSON.stringify(userToUpdate);
+    let headers = {
+      'Content-Type': 'application/json',
+      'Authorization': this.getToken()
+    };
+    let requestOptions = {
+      headers: new HttpHeaders(headers),
+    };
+    console.log(userToUpdate);
+    return this._http.put<any>(this.url + '\/update-user\/' + userToUpdate._id, params, requestOptions).pipe(map(res => res));
   }
 }

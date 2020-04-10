@@ -18,6 +18,7 @@ import {EditorModule, TINYMCE_SCRIPT_SRC} from '@tinymce/tinymce-angular';
 import {LoginComponent} from './login/login.component';
 import {RegistroComponent} from './registro/registro.component';
 import {UserService} from './services/user.service';
+import { UserEditComponent } from './user-edit/user-edit.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import {UserService} from './services/user.service';
     KeepersComponent,
     HomeComponent,
     LoginComponent,
-    RegistroComponent
+    RegistroComponent,
+    UserEditComponent
   ],
   imports: [
     BrowserModule,

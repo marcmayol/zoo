@@ -7,6 +7,7 @@ import {ContactComponent} from './contact/contact.component';
 import {KeepersComponent} from './keepers/keepers.component';
 import {RegistroComponent} from './registro/registro.component';
 import {LoginComponent} from './login/login.component';
+import {UserEditComponent} from './user-edit/user-edit.component';
 
 const routes: Routes = [
   {path: '', component: HomeComponent},
@@ -17,7 +18,8 @@ const routes: Routes = [
   {path: 'cuidadores', component: KeepersComponent},
   {path: 'tienda', component: TiendaComponent},
   {path: 'registro', component: RegistroComponent},
-  {path: 'login', component: LoginComponent}
+  {path: 'login', component: LoginComponent},
+  {path: 'mis-datos', component: UserEditComponent}
 ];
 
 @NgModule({

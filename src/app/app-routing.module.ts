@@ -8,7 +8,6 @@ import {KeepersComponent} from './keepers/keepers.component';
 import {RegistroComponent} from './registro/registro.component';
 import {LoginComponent} from './login/login.component';
 import {UserEditComponent} from './user-edit/user-edit.component';
-import {AdminGuard} from '../guards/admin.guard';
 const routes: Routes = [
   {path: '', component: HomeComponent},
   {path: '', redirectTo: 'home', pathMatch: 'full'},

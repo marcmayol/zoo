@@ -19,6 +19,7 @@ import {LoginComponent} from './login/login.component';
 import {RegistroComponent} from './registro/registro.component';
 import {UserService} from './services/user.service';
 import { UserEditComponent } from './user-edit/user-edit.component';
+import { AnimalDetailComponent } from './animal-detail/animal-detail.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { UserEditComponent } from './user-edit/user-edit.component';
     HomeComponent,
     LoginComponent,
     RegistroComponent,
-    UserEditComponent
+    UserEditComponent,
+    AnimalDetailComponent
   ],
   imports: [
     BrowserModule,

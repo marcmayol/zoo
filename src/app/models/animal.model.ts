@@ -3,7 +3,7 @@ export class Animal {
     public _id: string,
     public name: string,
     public year: string,
-    public descripion: string,
+    public description: string,
     public  user: string,
     public image: string
   ) {

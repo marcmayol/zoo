@@ -1,16 +1,29 @@
-<h3>{{title}}</h3>
-<form>
-  <div class="form-group">
-    <label for="nombre">nombre</label>
-    <input type="text" class="form-control" id="nombre">
+<div class="col-lg-8 offset-2">
+  <h3>{{title}}</h3>
+  <div class="alert alert-danger" *ngIf="!status && message">
+    {{message}}
   </div>
-  <div class="form-group">
-    <label for="description">description</label>
-    <textarea class="form-control" id="description" rows="3"></textarea>
+  <div class="alert alert-success" *ngIf="status && message">
+    {{message}}
   </div>
-  <div class="form-group">
-    <label for="year">Año</label>
-    <input type="text" class="form-control" id="year">
-  </div>
-  <button type="submit" class="btn btn-primary"> Crear nuevo</button>
-</form>
+  <form role="form"   [formGroup]="addForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="nombre">nombre</label>
+      <input type="text" formControlName="name" class="form-control" id="nombre">
+    </div>
+    <div class="form-group">
+      <label for="description">description</label>
+      <textarea class="form-control" formControlName="description" id="description" rows="3"></textarea>
+    </div>
+    <div class="form-group">
+      <label for="year">Año</label>
+      <input type="text" formControlName="year" class="form-control" id="year">
+    </div>
+    <div class="form-group">
+      <label for="file">Imagen:</label>
+      <input type="file" formControlName="image" class="form-control-file" id="file"
+             (change)="fileChangeEvent($event)">
+    </div>
+    <button type="submit" class="btn btn-primary"> Crear nuevo</button>
+  </form>
+</div>

@@ -14,7 +14,7 @@ const adminRoutes: Routes = [
       {path: '', component: ListComponent},
       {path: 'listado', component: ListComponent},
       {path: 'crear', component: AddComponent},
-      {path: 'editar', component: EditComponent}
+      {path: 'editar/:id', component: EditComponent}
     ]
   }
 ];

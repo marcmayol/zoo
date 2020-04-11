@@ -1,5 +1,10 @@
 <div class="col-lg-12">
   <h3>{{title}}</h3>
+  <div class="row">
+    <div class="col-lg-2">Buscar: </div>
+    <div class="col-lg-5"> <input type="text" class="form-control" [(ngModel)]="busqueda" /> </div>
+    <div class="col-lg-12" *ngIf="busqueda"> termino de busqueda: <strong>{{busqueda}}</strong></div>
+  </div>
   <table class="table">
     <thead>
     <tr>
@@ -13,18 +18,48 @@
       <td>{{n.name}}</td>
       <td>{{n.year}}</td>
       <td>
-        <button class="btn btn-success" role="button">
+        <a [routerLink]="['/animal', n._id]" class="btn btn-success" role="button">
           <i class="fa fa-eye" aria-hidden="true"></i>
           ver
-        </button>
-        <button class="btn btn-primary" role="button">
+        </a>
+        <a [routerLink]="['/admin-panel/editar/', n._id]" class="btn btn-primary" role="button">
           <i class="fa fa-pencil" aria-hidden="true"></i>
           Editar
-        </button>
-        <button class="btn btn-danger" role="button">
+        </a>
+        <!--        @ts-ignore-->
+        <a class="btn btn-danger" role="button" data-toggle="modal" [attr.data-target]="'#deleteModal-'+ n._id">
           <i class="fa fa-trash" aria-hidden="true"></i>
           Borrar
-        </button>
+        </a>
+        <!-- Modal -->
+
+        <div class="modal fade" id="deleteModal-{{n._id}}" tabindex="-1" role="dialog"
+
+             [attr.aria-labelledby]="'deleteModal-' + n._id  +'-Label'"
+             aria-hidden="true">
+          <div class="modal-dialog" role="document">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="deleteModal-{{n._id}}-Label">¿Estas seguro?</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body">
+                <p>¿Seguro que quieres eliminar el animal <strong>{{n.name}}</strong></p>
+                <p>i ejecutas la acción no podras desacer la</p>
+                <p>{{n._id}}</p>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-danger" data-dismiss="modal" (click)="deleteAnimal(n._id)"><i class="fa fa-trash"
+                                                                                              aria-hidden="true"></i>
+                  Borrar
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
       </td>
     </tr>
     </tbody>

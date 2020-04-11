@@ -74,7 +74,7 @@ export class AddComponent implements OnInit {
           this.router.navigate(['/admin-panel']);
         } else {
           this.animal = new Animal('', '', '2020', '', '', '');
-          this.message = 'error al registra animal';
+          this.message = 'error al registrar animal';
           this.status = false;
         }
 

@@ -8,6 +8,8 @@ import {KeepersComponent} from './keepers/keepers.component';
 import {RegistroComponent} from './registro/registro.component';
 import {LoginComponent} from './login/login.component';
 import {UserEditComponent} from './user-edit/user-edit.component';
+import {AnimalDetailComponent} from './animal-detail/animal-detail.component';
+
 const routes: Routes = [
   {path: '', component: HomeComponent},
   {path: '', redirectTo: 'home', pathMatch: 'full'},
@@ -18,7 +20,8 @@ const routes: Routes = [
   {path: 'tienda', component: TiendaComponent},
   {path: 'registro', component: RegistroComponent},
   {path: 'login', component: LoginComponent},
-  {path: 'mis-datos', component: UserEditComponent}
+  {path: 'mis-datos', component: UserEditComponent},
+  {path: 'animal/:id', component: AnimalDetailComponent}
 ];
 
 @NgModule({

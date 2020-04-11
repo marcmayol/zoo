@@ -1,1 +1,8 @@
-<p>animal-detail works!</p>
+<div class="col-lg-8 offset-2" *ngIf="animal">
+  <h2>{{animal.name}}</h2>
+  <figure class="figure" *ngIf="animal">
+    <img src="{{url + '/get-image-animal/' + animal.image}}" class="figure-img img-fluid rounded" alt="{{animal.name}} image">
+  </figure>
+  <p>{{animal.year}}</p>
+  <p>{{animal.description}}</p>
+</div>

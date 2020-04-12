@@ -1,3 +1,16 @@
 <div class="col-lg-12" [@fadeIn]>
-<h1>{{title}}</h1>
+  <h1>{{title}}</h1>
+  <div class="row">
+    <div class="col-lg-3" *ngFor="let k of keepers">
+      <div class="card">
+        <img *ngIf="k.image" src="{{url + '/get-image-file/'+ k.image}}" class="card-img-top" alt="{{k.name +'image'}}">
+        <img *ngIf="!k.image" src="https://via.placeholder.com/200x135" class="card-img-top" alt="{{k.name +'image'}}">
+        <div class="card-body">
+          <h5 class="card-title">{{k.name + ' ' + k.surname }}</h5>
+         <!--          <a [routerLink]="['/animal', k._id]" class="btn btn-primary">Ver animal</a>-->
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
+

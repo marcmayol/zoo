@@ -13,6 +13,7 @@ import {GLOBAL} from '../services/globals';
 export class AnimalDetailComponent implements OnInit {
   public animal: Animal;
   public url: string;
+  public keeper;
 
   constructor(
     private route: ActivatedRoute,
@@ -36,6 +37,7 @@ export class AnimalDetailComponent implements OnInit {
           } else {
             // @ts-ignore
             this.animal = response.animal;
+            this.keeper = this.animal.user;
           }
 
         },

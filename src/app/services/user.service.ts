@@ -14,7 +14,7 @@ export class UserService {
 
   constructor(
     // tslint:disable-next-line:variable-name
-    private _http: HttpClient
+    private http: HttpClient
   ) {
     this.url = GLOBAL.url;
   }
@@ -27,7 +27,7 @@ export class UserService {
       headers: new HttpHeaders(headers),
     };
 
-    return this._http.post<any>(this.url + '\/register', params, requestOptions).pipe(map(res => res));
+    return this.http.post<any>(this.url + '\/register', params, requestOptions).pipe(map(res => res));
 
   }
 
@@ -40,7 +40,7 @@ export class UserService {
     let requestOptions = {
       headers: new HttpHeaders(headers),
     };
-    return this._http.post<any>(this.url + '\/login', params, requestOptions).pipe(map(res => res));
+    return this.http.post<any>(this.url + '\/login', params, requestOptions).pipe(map(res => res));
 
   }
 
@@ -75,6 +75,9 @@ export class UserService {
       headers: new HttpHeaders(headers),
     };
     console.log(userToUpdate);
-    return this._http.put<any>(this.url + '\/update-user\/' + userToUpdate._id, params, requestOptions).pipe(map(res => res));
+    return this.http.put<any>(this.url + '\/update-user\/' + userToUpdate._id, params, requestOptions).pipe(map(res => res));
+  }
+  getKeepers() {
+    return this.http.get(this.url + '\/keepers').pipe(map(res => res));
   }
 }

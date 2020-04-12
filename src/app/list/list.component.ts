@@ -3,12 +3,14 @@ import {Animal} from '../models/animal.model';
 import {AnimalService} from '../services/animal.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import {UserService} from '../services/user.service';
+import {fadeLateral} from '../admin/animation';
 
 @Component({
   // tslint:disable-next-line:component-selector
   selector: 'admin-list',
   templateUrl: './list.component.html',
-  styleUrls: ['./list.component.css']
+  styleUrls: ['./list.component.css'],
+  animations: [fadeLateral]
 })
 export class ListComponent implements OnInit {
   public title: string;

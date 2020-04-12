@@ -6,13 +6,15 @@ import {AnimalService} from '../services/animal.service';
 import {UserService} from '../services/user.service';
 import {UploadService} from '../services/upload.service';
 import {GLOBAL} from '../services/globals';
+import {fadeLateral} from '../admin/animation';
 
 
 @Component({
   selector: 'admin-add',
   templateUrl: './add.component.html',
   styleUrls: ['./add.component.css'],
-  providers: [AnimalService, UploadService]
+  providers: [AnimalService, UploadService],
+  animations: [fadeLateral]
 })
 export class AddComponent implements OnInit {
   public title: string;

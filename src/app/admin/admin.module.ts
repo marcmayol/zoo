@@ -10,16 +10,17 @@ import {EditComponent} from '../edit/edit.component';
 import {UserService} from '../services/user.service';
 import {AdminGuard} from '../guards/admin.guard';
 import {FiltroPipe} from '../pipes/filtro.pipe';
-
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 
 @NgModule({
-  declarations: [MainComponent, ListComponent, AddComponent, EditComponent,  FiltroPipe],
+  declarations: [MainComponent, ListComponent, AddComponent, EditComponent, FiltroPipe],
   imports: [
     CommonModule,
     FormsModule,
     HttpClientModule,
     AdminRoutingModule,
+    BrowserAnimationsModule,
     ReactiveFormsModule,
 
   ],

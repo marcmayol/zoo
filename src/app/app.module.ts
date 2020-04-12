@@ -50,6 +50,7 @@ import { AnimalDetailComponent } from './animal-detail/animal-detail.component';
     {provide: TINYMCE_SCRIPT_SRC, useValue: 'tinymce/tinymce.min.js'},
     UserService
   ],
+  exports: [],
   bootstrap: [AppComponent]
 })
 export class AppModule {

@@ -14,7 +14,7 @@
     </tr>
     </thead>
     <tbody>
-    <tr *ngFor="let n of animals;">
+    <tr *ngFor="let n of animals | filtro:busqueda;">
       <td>{{n.name}}</td>
       <td>{{n.year}}</td>
       <td>

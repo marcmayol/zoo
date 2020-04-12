@@ -9,16 +9,19 @@ import {AddComponent} from '../add/add.component';
 import {EditComponent} from '../edit/edit.component';
 import {UserService} from '../services/user.service';
 import {AdminGuard} from '../guards/admin.guard';
+import {FiltroPipe} from '../pipes/filtro.pipe';
+
 
 
 @NgModule({
-  declarations: [MainComponent, ListComponent, AddComponent, EditComponent],
+  declarations: [MainComponent, ListComponent, AddComponent, EditComponent,  FiltroPipe],
   imports: [
     CommonModule,
     FormsModule,
     HttpClientModule,
     AdminRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+
   ],
   exports: [MainComponent, ListComponent, AddComponent, EditComponent],
   providers: [
